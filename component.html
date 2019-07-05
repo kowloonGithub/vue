@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        
+        <table>
+            <tbody is="my-component"></tbody>
+        </table>
+
+
+        <my-component message="来自父组件的数据"></my-component>
+
+    </div>
+
+    <script src= "https://unpkg.com/vue/dist/vue.min.js"></script>
+
+    <script>
+
+        Vue.component('my-component',{
+            template:'<div>{{message}}</div>',
+            props: ['message']
+        })
+
+        var app = new Vue({
+            el:"#app",
+            data:{
+            }
+
+        
+        })
+    </script>
+</body>
+</html>

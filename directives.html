@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <span v-html="link"></span>
+        <p v-if="show">文本</p>
+        <a v-bind:href="url">链接</a>
+        <img v-bind:src="imgUrl">
+        <!-- <button v-on:click="handleClose">点击隐藏文本</button> -->
+        <button v-on:click="show = false">点击隐藏文本</button>
+
+        <input type="radio" :checked="picked">
+        <label>单选按钮</label>
+
+        <p v-cloak>{{message}}</p>
+
+        <input type="checkbox" v-model="checked" id="checked">
+        <label for="checked">选择状态：{{checked}}</label>
+    </div>
+
+    <script src= "https://unpkg.com/vue/dist/vue.min.js"></script>
+
+    <script>
+        var app = new Vue({
+            el:"#app",
+            data:{
+                link:"<a href='#'>这是一个链接</a>",
+                show:true,
+                url:"www.baidu.com",
+                imgUrl:"www.baidu.com.npm",
+                message:"这是一个文本",
+                picked:false,
+                checked:false
+            },
+            methods:{
+                handleClose:function(){
+                    this.show = false;
+                }
+            }
+        })
+    </script>
+</body>
+</html>
