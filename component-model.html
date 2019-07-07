@@ -8,8 +8,9 @@
 </head>
 <body>
     <div id="app">
-
-        <my-component @increate="handleGetTotal" @reduce="handleGetTotal"></my-component>
+        <p>总数：{{total}}</p>
+        <my-component v-model="total"></my-component>
+        <my-component @input="handleGetTotal"></my-component>
 
     </div>
 
@@ -18,24 +19,16 @@
     <script>
 
         Vue.component('my-component',{
-            template:'\
-            <div>\
-                <button @click="handleIncrease">+1</button>\
-                <button @click="handleReduce">-1</button>\
-            </div>',
+            template:'<button @click="handleClick">+1</button>',
             data:function(){
                 return{
-                    counter:o
+                    counter:0
                 }
             },
             methods:{
-                handleIncrease:function(){
+                handleClick:function(){
                     this.counter++;
-                    this.$emit('increase',this.counter);
-                },
-                handleReduce:function(){
-                    this.counter--;
-                    this.$emit("reduce",this.counter);
+                    this.$emit('input',this.counter);
                 }
             }
         });
@@ -47,9 +40,10 @@
             },
             methods:{
                 handleGetTotal:function(total){
-                    this.total = total;
-                }
+                this.total = total;
             }
+        }
+          
         })
     </script>
 </body>

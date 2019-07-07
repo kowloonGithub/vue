@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+            {{message}}
+            <conponent-a></conponent-a>
+    </div>
+
+    <script src= "https://unpkg.com/vue/dist/vue.min.js"></script>
+
+    <script>
+        var bus = new Vue();
+
+        
+        Vue.component('component-a',{
+            template:'<button @click="handleEvent">传递事件</button>',
+            methods:{
+                handleEvent:function(){
+                    bus.$emit('on-message',"来自component-a组件内的内容")
+                }
+            }
+        });
+
+        
+        var app = new Vue({
+            el:"#app",
+            data:{
+                message:''
+            },
+            mounted:function(){
+                var _this = this;
+                bus.$on('on-message',function(msg){
+                    _this.message = msg;
+                })
+            }
+
+           
+        })
+    </script>
+</body>
+</html>

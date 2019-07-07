@@ -60,11 +60,17 @@ v-for:"(book,index) in books"
 兄弟组件通信：
 跨级组件通信：
 
-自定义事件：
+自定义事件：$emit 子组件向父组件通信
 
+非父子组件通信：dispatch（向上级派发事件） broadcast
 
-67组件内容：pass
-8指令 pass
+this.$parent  this.$children 用于访问父子组件
+
+使用slot分发内容
+props传递数据，events触发事件，slot内容分发构成了vue的三个api来源。
+理清什么是父组件，什么是子组件（内侧是子组件）
+
+单个slot
 
 
 
