@@ -8,13 +8,8 @@
 </head>
 <body>
     <div id="app">
-        
-        <table>
-            <tbody is="my-component"></tbody>
-        </table>
 
 
-        <my-component message="来自父组件的数据"></my-component>
 
     </div>
 
@@ -23,19 +18,18 @@
     <script>
 
         Vue.component('my-component',{
-            template:'<div>{{message}}</div>',
-            props: ['message'],
-            data:function(){
-                return{
-                    message:"组件内容"
-                }
-            }
+            
         })
 
         var app = new Vue({
             el:"#app",
             data:{
-
+                total:0
+            },
+            methods:{
+                handleGetTotal:function(total){
+                    this.total = total;
+                }
             }
         })
     </script>

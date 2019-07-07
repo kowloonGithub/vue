@@ -47,14 +47,20 @@ v-for:"(book,index) in books"
 修饰符：v-model.lazy .number .trim
 
 组件,注册+使用
+使用components属性来进行组建注册
 
-使用props传递数据,接受父组件的message
-单项数据流：
-数据验证：
+
+使用props传递数据,接受父组件的message数据
+
+单项数据流：data域可以将父组件的数据处理后再给子组件
+
+数据验证：限定组件传值的类型
 
 父子组件通信：
 兄弟组件通信：
 跨级组件通信：
+
+自定义事件：
 
 
 67组件内容：pass
