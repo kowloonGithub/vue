@@ -1,3 +1,5 @@
+VUEjs实战
+
 data可以是一个对象
 生命周期：
     created：未挂载，初始化数据
@@ -71,9 +73,28 @@ props传递数据，events触发事件，slot内容分发构成了vue的三个ap
 理清什么是父组件，什么是子组件（内侧是子组件）
 
 单个slot
+有名字slot
+作用域插槽：
+
+动态组件：切换组件的值
+异步组件：setTimeout延时渲染
+
+&nextTick：DOM更新完成后执行函数
+X-template：不用再拼凑template了
+
+8：自定义指令
+注册方法类似于组件的注册方法
+
+9：Render函数 。。。
+虚拟DOM：
+Render函数
+createElement
+
+10：webpack
+插件
 
 
 
 
 
-
+13知乎日报开发
